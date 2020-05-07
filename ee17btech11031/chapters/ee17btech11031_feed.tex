@@ -1,0 +1,49 @@
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\item For the feedback voltage amplifier fig.\ref{fig:Original ckt} and specs in Table \ref{table:ee18btech11005_Input_Table}. If $R_{1}$ = 1k\ohm , find the value of $R_{2}$ that results in a closed loop gain of 100 V/V.
+
+\begin{figure}[!ht]
+	\begin{center}
+			\resizebox{\columnwidth}{!}{\input{./figs/ee17btech11031_orgckt.tex}}
+	\end{center}
+\caption{}
+\label{fig:Original ckt}
+\end{figure}
+
+\begin{table}[!ht]
+\centering
+\input{./table/ee17btech11031_para.tex}
+\caption{}
+\label{table:ee18btech11005_Input_Table}
+\end{table}
+
+\\
+\solution The small signal equivalent fig. \ref{fig:small ckt}
+\begin{figure}[!ht]
+	\begin{center}
+			\resizebox{\columnwidth}{!}{\input{./figs/ee17btech11031_smallckt.tex}}
+	\end{center}
+\caption{}
+\label{fig:small ckt}
+\end{figure}
+
+\begin{align}
+V_{f} &= \beta V_{o}\\ 
+&= \frac{R_{1}}{R_{1}+R_{2}}.V_{o}\\
+ \implies \beta &= \frac{R_{1}}{R_{1}+R_{2}}
+\label{eq:ee17btech11031_beta}\\
+A_{f} &= \frac{A}{1+\beta A}\\
+\implies \beta &= \frac{1}{A_{f}} - \frac{1}{A}\\
+&= \frac{1}{100} - \frac{1}{10^4}\\
+\implies \beta &= 0.0099
+\end{align}
+
+Putting $\beta$ in \eqref{eq:ee17btech11031_beta} gives\\
+\implies $R_2$ = 100.01 k\ohm
+
+\item What does the gain become if $R_1$ is removed?
+\solution $\beta$ goes to 0. So,
+\begin{align}
+    A_{f} = A
+\end{align}
+\end{enumerate}
